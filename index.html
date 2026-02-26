@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Complaint System</title>
+</head>
+<body style="font-family: Arial; background-color: #f0f2f5;">
+
+<div style="width: 400px; margin: 100px auto; background: white; padding: 20px; border-radius: 10px;">
+
+<h2>Student Complaint Form</h2>
+
+<label>Name:</label><br>
+<input type="text" id="name" style="width:100%; padding:8px;"><br><br>
+
+<label>Complaint:</label><br>
+<textarea id="complaint" style="width:100%; padding:8px;"></textarea><br><br>
+
+<button onclick="submitComplaint()" style="width:100%; padding:10px; background:green; color:white;">
+Submit
+</button>
+
+<p id="message" style="color:green;"></p>
+
+</div>
+
+<script>
+
+function submitComplaint()
+{
+    var name = document.getElementById("name").value;
+    var complaint = document.getElementById("complaint").value;
+
+    if(name == "" || complaint == "")
+    {
+        document.getElementById("message").innerHTML = "Please fill all fields";
+        return;
+    }
+
+    document.getElementById("message").innerHTML =
+        "Complaint submitted successfully by " + name;
+
+}
+
+</script>
+
+</body>
+</html>
